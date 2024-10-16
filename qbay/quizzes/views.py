@@ -1,15 +1,10 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
 from django.http import HttpResponse
 from .forms import QuizForm, QuestionForm, AnswerFormSet
 from .models import Quiz, Question, Answer, QuizAttempt
 
-
-from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.decorators import login_required
-from django.contrib import messages
-from .forms import QuizForm, QuestionForm, AnswerFormSet
-from .models import Quiz
 
 @login_required
 def create_quiz(request):
