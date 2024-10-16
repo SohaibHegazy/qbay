@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    /* New Welcome Section Styles */
+    .welcome-section {
+        background-color: #2e5c8b; /* Background color */
+        height: calc(6 * 50px); /* Height adjustment */
+        display: flex; /* Flexbox for centering content */
+        flex-direction: column; /* Arrange children in a column */
+        justify-content: center; /* Center vertically */
+        align-items: center; /* Center horizontally */
+        color: white; /* Text color */
+        font-family: 'Comfortaa', sans-serif; /* Font family */
+        text-align: center; /* Center text */
+        margin-bottom: 20px; /* Space below the section */
+    }
+
+    .welcome-section h1 {
+        font-weight: bold; /* Make the font bold */
+        font-size: 2.5rem; /* Adjust font size as needed */
+    }
+
+    .welcome-section h3 {
+        font-size: 1.0rem; /* Adjust font size as needed */
+        margin-top: 1px; /* Add space above h3 */
+    }
+
+    /* Button Styles */
+    .button-container {
+        display: flex; /* Flexbox for buttons */
+        justify-content: center; /* Center buttons */
+        gap: 20px; /* Space between buttons */
+        margin-top: 20px; /* Space above buttons */
+    }
+
+    .btn {
+        background-color: #2e5c8b; /* Button background color */
+        border: none; /* Remove borders */
+        color: white; /* White text */
+        padding: 15px 40px; /* Padding for height and width */
+        text-align: center; /* Center text */
+        text-decoration: none; /* No underline */
+        display: inline-block; /* Make it an inline block */
+        font-size: 16px; /* Font size */
+        border-radius: 25px; /* Oval shape */
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: background-color 0.3s; /* Smooth transition */
+    }
+
+    .btn:hover {
+        background-color: #245c7b; /* Darker shade on hover */
+    }
+</style>
+
+<div class="welcome-section">
+    <h1>Welcome to Qbay</h1>
+    <h3>The one platform to make or take a quiz</h3>
+</div>
+
+<div class="button-container">
+    <a href="{% url 'create_quiz' %}" class="btn">Create Quiz</a>
+    <a href="{% url 'quiz_list' %}" class="btn">Take Quiz</a>
+</div>
+
+{% endblock %}

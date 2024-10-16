@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Add Answers for Question: {{ question.text }}</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <!-- Render the management form -->
+    {{ formset.management_form }}
+
+    <!-- Loop through the formset to render each form -->
+    {% for form in formset %}
+        <div>
+            {{ form.as_p }}
+        </div>
+    {% endfor %}
+    
+    <button type="submit">Save Answers</button>
+</form>
+{% endblock %}

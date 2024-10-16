@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Centering the Welcome header -->
+    <div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
+        <h1>Welcome, {{ user.username }}</h1>
+    </div>
+
+    <!-- Container for the two sections -->
+    <div style="
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 5%;
+    ">
+        <!-- Left section: Quizzes Created -->
+        <div style="
+            flex: 1; 
+            max-width: 45%; 
+            min-width: 300px; 
+            box-sizing: border-box;
+            background-color: #2e5c8b; /* Light navy color */
+            border-radius: 15px; /* Rounded corners */
+            padding: 20px; /* Space inside the box */
+            color: white; /* Text color */
+        "> 
+            <h2>Quizzes You Created</h2>
+            <ul style="list-style-type: none; padding: 0;"> <!-- Remove default padding -->
+                {% for quiz in user_quizzes_created %}
+                    <li style="margin-bottom: 15px; display: flex; align-items: center;"> <!-- Flex for alignment -->
+                        <a href="{% url 'take_quiz' quiz.id %}" style="margin-right: 10px; flex: 1; color: white;">{{ quiz.title }}</a> <!-- Take Quiz link -->
+                        
+                        <!-- Delete button inside a form to use POST request -->
+                        <form action="{% url 'delete_quiz' quiz.id %}" method="POST" style="display: flex; align-items: center;">
+                            {% csrf_token %}
+                            <button type="submit" style="
+                                background-color: red; 
+                                color: white; 
+                                border: none; 
+                                padding: 5px 15px; 
+                                cursor: pointer;
+                                border-radius: 20px;
+                                font-size: 14px;
+                                margin: 0; /* Ensures no extra space */
+                            ">Delete</button>
+                        </form>
+                    </li>
+                {% empty %}
+                    <li>No quizzes created yet.</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- Right section: Quizzes Taken -->
+        <div style="
+            flex: 1; 
+            max-width: 45%; 
+            min-width: 300px; 
+            box-sizing: border-box;
+            background-color: #2e5c8b; /* Light navy color */
+            border-radius: 15px; /* Rounded corners */
+            padding: 20px; /* Space inside the box */
+            color: white; /* Text color */
+        ">
+            <h2>Quizzes You've Taken</h2>
+            <ul>
+                {% for attempt in user_quizzes_taken %}
+                    <li>
+                        <a href="{% url 'quiz_detail' attempt.quiz.id %}" style="color: white;">{{ attempt.quiz.title }}</a> 
+                        - Score: {{ attempt.score }}%
+                    </li>
+                {% empty %}
+                    <li>No quizzes taken yet.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+  
+{% endblock %}

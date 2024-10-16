@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Add Question to {{ quiz.title }}</h1>
+<form method="post">
+    {% csrf_token %}
+    
+    <h2>Add a Question</h2>
+    {{ question_form.as_p }}
+    
+    <h2>Possible Answers (Choose one correct answer)</h2>
+    {{ answer_formset.management_form }}
+    {% for form in answer_formset %}
+        <div class="answer-form">
+            {{ form.as_p }}
+        </div>
+    {% endfor %}
+    
+    <button type="submit">Save Question</button>
+</form>
+
+
+{% endblock %}

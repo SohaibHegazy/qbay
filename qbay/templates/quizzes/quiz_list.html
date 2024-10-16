@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+  /* Centering Content and Styling the Box */
+  h1 {
+      text-align: center; /* Center the heading */
+      margin: 20px 0; /* Space above and below the heading */
+      color: black; /* Set the color of the heading to black */
+      font-family: 'Comfortaa', sans-serif; /* Optional: Set font family */
+  }
+
+  .quiz-container {
+      background-color: #2e5c8b; /* Box background color */
+      border-radius: 15px; /* Rounded corners */
+      padding: 20px; /* Padding inside the box */
+      max-width: 600px; /* Maximum width of the box */
+      margin: 20px auto; /* Center the box horizontally and add margin */
+      color: white; /* Text color */
+      text-align: center; /* Center text */
+  }
+
+  .quiz-container ul {
+      list-style-type: none; /* Remove bullet points */
+      padding: 0; /* Remove default padding */
+      margin: 0; /* Remove default margin */
+  }
+
+  .quiz-container li {
+      margin: 10px 0; /* Space between list items */
+  }
+
+  .quiz-container a {
+      color: white; /* Link color */
+      text-decoration: none; /* Remove underline */
+      padding: 10px; /* Padding for the links */
+      border-radius: 5px; /* Slightly rounded corners for links */
+      transition: background-color 0.3s; /* Smooth transition */
+  }
+
+  .quiz-container a:hover {
+      background-color: #245c7b; /* Darker shade on hover */
+  }
+</style>
+
+<h1>Available Quizzes</h1>
+
+<div class="quiz-container">
+    <ul>
+        {% for quiz in quizzes %}
+            <li>
+                <a href="{% url 'take_quiz' quiz.id %}">{{ quiz.title }}</a>
+            </li>
+            <li style="color: black; font-size: smaller;">
+                Created on {{ quiz.created_at|date:"F j, Y" }}
+            </li>
+        {% empty %}
+            <p>No quizzes available.</p>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

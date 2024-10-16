@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ quiz.title }}</h2>
+
+<ul>
+    {% for question in questions %}
+        <li>
+            <h3>{{ question.text }}</h3>
+            <ul>
+                {% for answer in question.answer_set.all %}
+                    <li>{{ answer.text }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% empty %}
+        <p>No questions added to this quiz.</p>
+    {% endfor %}
+</ul>
+{% endblock %}

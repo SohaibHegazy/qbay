@@ -1,0 +1,170 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: grey;
+  padding: 10px 20px;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links li {
+  display: inline-block;
+}
+
+.nav-links a, .nav-links button {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer {
+  background-color: grey;
+  padding: 20px 0;
+  margin-top: auto;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer p {
+  text-align: center;
+  color: white;
+}
+
+/* Ensure the footer sticks to the bottom of the page */
+html, body {
+  height: 100%;
+}
+
+/* Button Styles */
+input[type="radio"] {
+  appearance: radio; /* Ensure radio buttons render as expected */
+}
+
+button[type="submit"] {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Profile Page Styles */
+.profile-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 5%;
+}
+
+.profile-section {
+  flex: 1;
+  max-width: 45%;
+  min-width: 300px;
+  background-color: #2e5c8b;
+  border-radius: 15px;
+  padding: 20px;
+  color: white;
+  box-sizing: border-box;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.quiz-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.quiz-link {
+  margin-right: 10px;
+  flex: 1;
+  color: white;
+  text-decoration: none;
+}
+
+.delete-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 14px;
+  margin: 0;
+}
+
+.delete-button:hover {
+  background-color: darkred;
+}
+
+/* Welcome Header Centering */
+.welcome-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+
+/* List Styles */
+.profile-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.profile-section li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}

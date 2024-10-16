@@ -1,0 +1,4 @@
+Django
+django-decouple
+django-extensions
+Pillow

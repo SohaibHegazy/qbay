@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Submit Quiz: {{ quiz.title }}</h1>
+    <p>You have added all {{ quiz.num_questions }} questions. Do you want to submit the quiz?</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Submit Quiz</button>
+        <a href="{% url 'add_question' quiz.id %}">Go Back</a>
+    </form>
+{% endblock %}

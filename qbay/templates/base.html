@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qbay</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="header-nav">
+            <div class="logo">
+                <a href="{% url 'home' %}" style="color: white; font-family: 'Comfortaa';"><strong>Qbay</strong></a>
+            </div>
+            <ul class="nav-links">
+              <li><a href="{% url 'home' %}">Home</a></li>
+              <li><a href="{% url 'about' %}">About</a></li>
+              {% if user.is_authenticated %}
+                  <li><a href="{% url 'profile' %}">Profile</a></li>
+                  <li><a href="{% url 'logout' %}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                  <form id="logout-form" method="POST" action="{% url 'logout' %}" style="display: none;">
+                      {% csrf_token %}
+                  </form>
+              {% else %}
+                  <li><a href="{% url 'login' %}">Login</a></li>
+                  <li><a href="{% url 'signup' %}">Sign Up</a></li>
+              {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+      <nav class="footer-nav">
+          <ul class="footer-links">
+              <li><a href="{% url 'home' %}">Home</a></li>
+              <li><a href="{% url 'about' %}">About</a></li>
+              {% if user.is_authenticated %}
+                  <li><a href="{% url 'profile' %}">Profile</a></li>
+                  <li><a href="{% url 'create_quiz' %}">Create Quiz</a></li>
+                  <li><a href="{% url 'quiz_list' %}">Take Quiz</a></li>
+              {% endif %}
+          </ul>
+      </nav>
+      <p>&copy; 2024 Qbay. All rights reserved.</p>
+    </footer>
+</body>
+</html>

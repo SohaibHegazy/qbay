@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+  /* Center the heading */
+  h1 {
+      text-align: center; /* Center the heading */
+      color: black; /* Set the color of the heading to black */
+      font-family: 'Comfortaa', sans-serif; /* Optional: Set font family */
+      margin-bottom: 20px; /* Space below the heading */
+  }
+
+  /* Box Styling for Content */
+  .about-container {
+      background-color: #2e5c8b; /* Box background color */
+      border-radius: 15px; /* Rounded corners */
+      padding: 20px; /* Padding inside the box */
+      max-width: 600px; /* Maximum width of the box */
+      margin: 0 auto; /* Center the box horizontally */
+      color: white; /* Text color */
+      font-family: 'Comfortaa', sans-serif; /* Optional: Set font family */
+      text-align: center; /* Center text */
+  }
+
+  .about-container p {
+      margin-bottom: 10px; /* Space between paragraphs */
+  }
+</style>
+
+<h1>About Qbay</h1>
+
+<div class="about-container">
+  <p>Welcome to Qbay! This platform allows you to create and take quizzes.</p>
+  <p>Qbay is designed to help you create a quiz of your own with any number of questions,</br>
+    each question should have four possible answers with one of them correct.
+  </p>
+  <p>You can also take a quiz and see your score.</p>
+  <p>Go to the profile page to access and control the quizzes you created.</p>
+  <p>In the profile page, you can also see the quizzes you have taken and their scores.</p>
+</div>
+
+{% endblock %}
