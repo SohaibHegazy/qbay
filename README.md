@@ -11,6 +11,18 @@ Go to the profile page to access and control the quizzes you created.
 
 In the profile page, you can also see the quizzes you have taken and their scores.
 
+## Preview
+
+### Home Page
+
+![0A06767A-ACE5-483C-AF02-BE5C12922A1E](https://github.com/user-attachments/assets/022157c1-66a5-4dc9-b252-bdd16e397ba9)
+
+
+### Profile Page (Check Created and Taken Quizzes)
+
+![A964654A-DF51-4DF0-83D6-8EA1DABBE019](https://github.com/user-attachments/assets/99fb50ee-c2cb-4b98-a23f-9a3d80ff1c9c)
+
+
 ## Features
 
 1- Customized Quiz Topic: Any user can create quiz in any topic.
@@ -43,7 +55,7 @@ To run this project locally for development purposes, follow the following in or
 1- Clone the repository to your local machine:
 
    ```shell
-   git clone https://github.com/SohaibHegazy/quiz-app-django.git
+   git clone https://github.com/SohaibHegazy/qbay.git
    ```
 
 2- Navigate to the project directory:
