@@ -61,7 +61,7 @@ To run this project locally for development purposes, follow the following in or
 2- Navigate to the project directory:
 
    ```shell
-   cd qbay
+   cd qbay/qbay
    ```
 
 3- Install dependencies:
